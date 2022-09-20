@@ -5,6 +5,7 @@ import {
   Get,
   Inject,
   Post,
+  UseGuards,
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
@@ -12,6 +13,7 @@ import { IAuthService } from './auth';
 import { CreateUserDto } from './dtos/CreateUser.dto';
 import { IUSerService } from 'src/users/user';
 import { instanceToPlain } from 'class-transformer';
+import { LocalAuthGuard } from 'src/utils/Guards';
 @Controller(Routes.AUTH)
 export class AuthController {
   constructor(
@@ -27,6 +29,7 @@ export class AuthController {
   }
 
   @Post('login')
+  @UseGuards(LocalAuthGuard)
   login() {}
 
   @Get('status')
