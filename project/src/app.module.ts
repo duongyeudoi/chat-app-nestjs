@@ -5,6 +5,7 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PassportModule } from '@nestjs/passport';
+import { ConversationsModule } from './conversations/conversations.module';
 @Module({
   imports: [
     AuthModule,
@@ -21,6 +22,7 @@ import { PassportModule } from '@nestjs/passport';
       entities,
       synchronize: true,
     }),
+    ConversationsModule,
   ],
   controllers: [],
   providers: [],
