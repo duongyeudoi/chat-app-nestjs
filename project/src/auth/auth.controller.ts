@@ -1,3 +1,4 @@
+import { AuthGuard } from '@nestjs/passport';
 import { Routes, Services } from '../utils/constants';
 import {
   Body,

@@ -1,3 +1,4 @@
+import { SessionSerializer } from './../utils/SessionSerializer';
 import { LocalStrategy } from './../utils/LocalStrategy';
 import { UsersModule } from './../users/users.module';
 import { Services } from '../utils/constants';
@@ -10,6 +11,7 @@ import { AuthService } from './auth.service';
   controllers: [AuthController],
   providers: [
     LocalStrategy,
+    SessionSerializer,
     {
       provide: Services.AUTH,
       useClass: AuthService,
